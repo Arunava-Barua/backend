@@ -1,6 +1,11 @@
 const express = require("express");
 const app = express();
 
+const cors = require('cors');
+app.use(cors({
+  origin: '*'
+}));
+
 const { verify } = require("./smart-contract/smartContractFunctions");
 
 app.get("/", (req, res) => {
